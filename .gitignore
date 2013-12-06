@@ -1,6 +1,33 @@
-*.class
-
-# Package Files #
-*.jar
-*.war
-*.ear
+public int[] givingChange(double amountDue, double paymentReceived)
+{
+  int doc=0,qc=0,dic=0,nc=0,pc=0;
+  double change = paymentReceived-amountDue;
+  while (change>=1.00)
+  {
+    change=change-1.00;
+    doc++;
+  }
+  while (change>=0.25)
+  {
+    change=change-0.25;
+    qc++;
+  }
+  while (change>=0.10)
+  {
+    change=change-0.10;
+    dic++;
+  }
+  while (change>=0.05)
+  {
+    change=change-0.05;
+    nc++;
+  }
+  while (change>=0.01)
+  {
+    change=change-0.01+0.0001;
+    pc++;
+  }
+  int[] solution= {doc,qc,dic,nc,pc};
+  return solution;
+  
+}
